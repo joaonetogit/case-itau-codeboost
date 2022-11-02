@@ -59,11 +59,31 @@
           border: 0.1rem solid #ffffff;
           border-radius: 0.8rem;
           padding: 1rem 2rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: $color-white;
+
+            .icon {
+              filter: contrast(0);
+            }
+            .text {
+              .download-subtitle {
+                color: #495057;
+              }
+              .download-title {
+                color: #212529;
+              }
+            }
+          }
 
           @include responsive(max-width, 480px) {
             width: 100%;
           }
 
+          .icon {
+            transition: all 0.3s ease;
+          }
           .text {
             @include flex(column, flex-start);
             .download-subtitle {
@@ -71,12 +91,14 @@
               font-size: 1.3rem;
               line-height: 1.7rem;
               color: #ffffff;
+              transition: all 0.3s ease;
             }
             .download-title {
               font-weight: 400;
               font-size: 1.8rem;
               line-height: 2.3rem;
               color: #ffffff;
+              transition: all 0.3s ease;
             }
           }
         }
@@ -85,9 +107,13 @@
       .next {
         @include flex(row, center);
         gap: 2rem;
-
         @include responsive(max-width, 480px) {
           display: none;
+        }
+
+        .icon {
+          animation: moveUp 1.5s linear infinite;
+          transition: all 0.3s ease-in-out;
         }
         .text {
           font-weight: 700;
@@ -95,10 +121,6 @@
           line-height: 1.8rem;
           color: #ffffff;
         }
-      }
-    }
-    .woman {
-      &::after {
       }
     }
   }
@@ -184,14 +206,21 @@
           &:last-child {
             border-bottom: unset;
           }
+
+          &:hover {
+            .icon {
+              animation: moveHorizontal 1s linear;
+            }
+          }
+
           .icon {
             @include flex(row, center, center);
             width: 30px;
             height: 30px;
+            transition: all 0.3s ease;
           }
           .text {
             width: 100%;
-            max-width: 50.8rem;
             display: flex;
             font-weight: 400;
             font-size: 1.6rem;
@@ -203,7 +232,7 @@
     }
 
     .phone {
-      width: 100%;
+      width: 99%;
       height: 100%;
       display: flex;
       justify-content: flex-end;

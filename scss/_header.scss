@@ -32,6 +32,11 @@
         &-item {
           .menu-link {
             @include flex(row, center, flex-start, 1.2rem);
+            &:hover {
+              .menu-link-icon {
+                transform: rotate(180deg);
+              }
+            }
             &-text {
               display: block;
               font-weight: 400;
@@ -43,6 +48,7 @@
             &-icon {
               width: 1rem;
               color: $primary-yellow;
+              transition: all 0.3s ease;
             }
           }
         }
